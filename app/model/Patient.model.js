@@ -21,5 +21,5 @@ const PatientSchema=new mongoose.Schema({
 
 
 module.exports={
-    PatientModel:mongoose.model("PatientModel",PatientSchema)
+    patientModel:mongoose.model("PatientModel",PatientSchema)
 };
