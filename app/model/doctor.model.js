@@ -22,5 +22,5 @@ const DockerSchema=new mongoose.Schema({
 
 
 module.exports={
-    DockerModel:mongoose.model("DockerModel",DockerSchema)
+    dockerModel:mongoose.model("DockerModel",DockerSchema)
 };

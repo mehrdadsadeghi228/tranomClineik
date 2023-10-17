@@ -104,5 +104,5 @@ class managerControllerClass extends Controller{
 }
 
 module.exports={
-    managerControllerClass:new managerControllerClass()
+    managerController:new managerControllerClass()
 }

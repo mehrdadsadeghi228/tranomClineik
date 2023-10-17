@@ -53,5 +53,5 @@ class OverviewControllerClass extends Controller{
 }
 
 module.exports={
-    OverviewController:new OverviewControllerClass()
+    overviewController:new OverviewControllerClass()
 }
