@@ -26,7 +26,6 @@ class managerControllerClass extends Controller{
 
     async SendsMobileCodeAdmin(req, res, next) {
         try {
-            var location = '/AdminManager/SendsCodeAdmin';
             const code = codeERSali();
             const { userName } = req.Admin;
             const resultSearching = await dockerModel.findOne({ userFullName: userName });

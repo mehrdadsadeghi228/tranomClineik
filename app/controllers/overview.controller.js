@@ -1,5 +1,5 @@
 require('dotenv').config();
-const Controller = require('../base.Controller');
+const Controller = require('./base.Controller');
 
 const {StatusCodes: HttpStatus, StatusCodes} = require("http-status-codes");
 const createHttpError = require('http-errors');
