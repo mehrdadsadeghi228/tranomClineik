@@ -1,66 +1,55 @@
 /**
  * @swagger
  *  components:
- *     TopicSchemas:
- *        CreateTopic:
+ *     OverViewSchemas:
+ *        getResumeDoctor:
  *           type: object
  *           required:
- *              -   name
+ *              -   username
  *           properties:
- *              name:
+ *              username:
  *                 type: string
  *                 description: name Topic 
- *        pushIntoTopic:
- *           type: object
- *           required:
- *              -   name
- *              -   productsId
- *           properties:
- *              name:
- *                 type: string
- *                 description: name Topic 
- *              productsId:
- *                 type: string
- *                 description: products id 
- *        DeleteProductsInTopic:
- *           type: object
- *           required:
- *              -   name
- *              -   productsId
- *           properties:
- *              name:
- *                 type: string
- *                 description: name Topic 
- *              productsId:
- *                 type: string
- *                 description:  products id
- *      
+ *     
  */
 
 /**
  * @swagger
  *  tags:
- *      name : Topic-Admin-Section
- *      description : Topic-Admin-Section
+ *      name : OverView-Admin-Section
+ *      description : OverView-Admin-Section
  */
+
+
 
 
 /**
  * @swagger
- *  /pushIntoTopic:
- *      put:
- *          tags :  [Topic-Admin-Section]
- *          summary: findProductById
- *          description: findProductById
- *          requestBody:
- *              required: true
- *              content:
- *                  application/x-www-form-urlencoded:
- *                      schema:
- *                          $ref: '#/components/TopicSchemas/pushIntoTopic'
- *                  application/json:
- *                      schema:
- *                          $ref: '#/components/TopicSchemas/pushIntoTopic'
+ *  /getListOfDoctor:
+ *      get:
+ *          tags :  [OverView-Admin-Section]
+ *          summary: Manager
+ *          description: get List Of Doctor
+ *           requestBody:
+ *              required: false
+ *          responses:
+ *              201: 
+ *                  description: Success
+ *              400: 
+ *                  description: Bad Request
+ *              401: 
+ *                  description: Unauthorization
+ *              500: 
+ *                  description: Internal Server Error 
+ *//**
+ * @swagger
+ *  /getListOfDoctorWithTime:
+ *      get:
+ *          tags :  [OverView-Admin-Section]
+ *          summary: Manager
+ *          description: get List Of Doctor With Time
+ *           requestBody:
+ *              required: false
  *          responses:
  *              201: 
  *                  description: Success
@@ -71,48 +60,23 @@
  *              500: 
  *                  description: Internal Server Error 
  */
-/**
+
+ /**
  * @swagger
- *  /DeleteProductsInTopic:
- *      delete:
- *          tags :  [Topic-Admin-Section]
- *          summary: findProductById
- *          description: findProductById
- *          requestBody:
- *              required: true
- *              content:
- *                  application/x-www-form-urlencoded:
- *                      schema:
- *                          $ref: '#/components/TopicSchemas/DeleteProductsInTopic'
- *                  application/json:
- *                      schema:
- *                          $ref: '#/components/TopicSchemas/DeleteProductsInTopic'
- *          responses:
- *              201: 
- *                  description: Success
- *              400: 
- *                  description: Bad Request
- *              401: 
- *                  description: Unauthorization
- *              500: 
- *                  description: Internal Server Error 
- */
-/**
- * @swagger
- *  /CreateTopic:
+ *  /getResumeDoctor:
  *      post:
- *          tags :  [Topic-Admin-Section]
- *          summary: findProductById
- *          description: findProductById
+ *          tags :  [OverView-Admin-Section]
+ *          summary: find Product By Id
+ *          description: find Product By Id
  *          requestBody:
  *              required: true
  *              content:
  *                  application/x-www-form-urlencoded:
  *                      schema:
- *                          $ref: '#/components/TopicSchemas/CreateTopic'
+ *                          $ref: '#/OverViewSchemas/TopicSchemas/getResumeDoctor'
  *                  application/json:
  *                      schema:
- *                          $ref: '#/components/TopicSchemas/CreateTopic'
+ *                          $ref: '#/OverViewSchemas/TopicSchemas/getResumeDoctor'
  *          responses:
  *              201: 
  *                  description: Success
