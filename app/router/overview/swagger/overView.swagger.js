@@ -8,8 +8,8 @@
  *              -   username
  *           properties:
  *              username:
- *                 type: string
- *                 description: name Topic 
+ *                  type: string
+ *                  description: name Topic 
  *     
  */
 
@@ -27,7 +27,7 @@
  * @swagger
  *  /getListOfDoctor:
  *      get:
- *          tags :  [OverView-Admin-Section]
+ *          tags: [OverView-Admin-Section]
  *          summary: Manager
  *          description: get List Of Doctor
  *           requestBody:
@@ -45,7 +45,7 @@
  * @swagger
  *  /getListOfDoctorWithTime:
  *      get:
- *          tags :  [OverView-Admin-Section]
+ *          tags: [OverView-Admin-Section]
  *          summary: Manager
  *          description: get List Of Doctor With Time
  *           requestBody:
@@ -65,7 +65,7 @@
  * @swagger
  *  /getResumeDoctor:
  *      post:
- *          tags :  [OverView-Admin-Section]
+ *          tags: [OverView-Admin-Section]
  *          summary: find Product By Id
  *          description: find Product By Id
  *          requestBody:

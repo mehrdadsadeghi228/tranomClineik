@@ -25,7 +25,7 @@
  *        getVerifyMobileAdmin:
  *           type: object
  *           required:
- *              -   userCode
+ *              -  userCode
  *           properties:
  *              name:
  *                 type: string
@@ -45,7 +45,7 @@
  * @swagger
  *  manager/AddDoctor:
  *      post:
- *          tags :  [Manager-Admin-Section]
+ *          tags: [Manager-Admin-Section]
  *          summary: Manager
  *          description: AddDoctor
  *          requestBody:
@@ -69,28 +69,9 @@
  */
 /**
  * @swagger
- *  manager/SendsMobileCodeAdmin:
- *      get:
- *          tags :  [Manager-Admin-Section]
- *          summary: Manager
- *          description: Sends Mobile CodeAdmin
- *           requestBody:
- *              required: false
- *          responses:
- *              201: 
- *                  description: Success
- *              400: 
- *                  description: Bad Request
- *              401: 
- *                  description: Unauthorization
- *              500: 
- *                  description: Internal Server Error 
- */
-/**
- * @swagger
  *  manager/getVerifyMobileAdmin:
  *      post:
- *          tags :  [Customer-Auth-Admin-Section]
+ *          tags: [Customer-Auth-Admin-Section]
  *          summary: Customer-Auth
  *          description: get Verify Mobile Admin
  *          requestBody:
@@ -112,3 +93,23 @@
  *              500: 
  *                  description: Internal Server Error 
  */ 
+
+/**
+ * @swagger
+ *  manager/SendsMobileCodeAdmin:
+ *      get:
+ *          tags: [Manager-Admin-Section]
+ *          summary: Manager
+ *          description: Sends Mobile CodeAdmin
+ *          requestBody:
+ *              required: false
+ *          responses:
+ *              201: 
+ *                  description: Success
+ *              400: 
+ *                  description: Bad Request
+ *              401: 
+ *                  description: Unauthorization
+ *              500: 
+ *                  description: Internal Server Error 
+ */

@@ -41,7 +41,7 @@
  * @swagger
  *  customer/Signing:
  *      post:
- *          tags :  [Customer-Auth-Admin-Section]
+ *          tags:  [Customer-Auth-Admin-Section]
  *          summary: Customer-Auth
  *          description: Signing
  *          requestBody:
@@ -67,7 +67,7 @@
  * @swagger
  *  customer/SendsMobileCodeAdmin:
  *      get:
- *          tags :  [Customer-Auth-Admin-Section]
+ *          tags:  [Customer-Auth-Admin-Section]
  *          summary: Customer-Auth
  *          description: SendsMobileCodeAdmin
  *           requestBody:
@@ -86,7 +86,7 @@
  * @swagger
  *  customer/getVerifyMobileAdmin:
  *      post:
- *          tags :  [Customer-Auth-Admin-Section]
+ *          tags:  [Customer-Auth-Admin-Section]
  *          summary: Customer-Auth
  *          description: getVerifyMobileAdmin
  *          requestBody:

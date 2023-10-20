@@ -99,7 +99,12 @@ class managerControllerClass extends Controller{
         }
     }
 
-
+    async getTime(req,res,next){
+        const  id=req.customer.id;
+        const  ud=req.admin.id ;
+        const query=await dockerModel.findById(id);
+        
+    }
 }
 
 module.exports={
