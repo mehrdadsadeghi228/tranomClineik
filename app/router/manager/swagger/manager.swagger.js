@@ -72,7 +72,7 @@
  *  manager/getVerifyMobileAdmin:
  *      post:
  *          tags: [Customer-Auth-Admin-Section]
- *          summary: Customer-Auth
+ *          summary: Customer- Auth
  *          description: get Verify Mobile Admin
  *          requestBody:
  *              required: true
