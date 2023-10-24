@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { patientModel } = require('../../model/Patient.model');
+const { dockerModel } = require('../../model/doctor.model');
 const { SignAccessToken, SignRefreshToken } = require('../../utils/checkAuth');
 const Controller = require('../base.Controller');
 
@@ -22,7 +23,6 @@ class CustomerAuthControllerClass extends Controller{
             next(error)
         }
     }
-
 
     async SendsMobileCodeAdmin(req, res, next) {
         try {

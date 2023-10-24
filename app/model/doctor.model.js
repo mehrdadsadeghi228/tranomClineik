@@ -1,9 +1,19 @@
 const { default: mongoose } = require("mongoose");
+const DaySchema = new mongoose.Schema({
+    nameOfDay:{"time":{
+        reserver:{type:Boolean,require:false},
+        idCustomer:{type:mongoose.Types.ObjectId,ref:"PatientModel",require:false}
+    }}
+});
+const TimeSchema=new mongoose.Schema({
+    nameOfDay:{type:[DaySchema]}
+
+});
 
 const DockerSchema=new mongoose.Schema({
     userFullName:{type:String,require:true,unique:true},
     resume:{type:Object,default:{}},
-    dayOfWeekFree:{type:Object},
+    Time:{type:[TimeSchema]},
     dayOfWeekReservation:{type:Object},
     mobile:{type:Number,require:true, unique:true},
     email:{type:String,require:true,unique:true},

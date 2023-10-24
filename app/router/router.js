@@ -6,8 +6,8 @@ const app = require('express').Router();
 
 
 app.use("",overViewRouters);
-app.use("manager",managerRouter);
-app.use("customer",customerAuthRouter);
+app.use("/manager",managerRouter);
+app.use("/customer",customerAuthRouter);
 module.exports = {
     AllRouters: app
 }

@@ -43,7 +43,7 @@
 
 /**
  * @swagger
- *  manager/AddDoctor:
+ *  /manager/AddDoctor:
  *      post:
  *          tags: [Manager-Admin-Section]
  *          summary: Manager
@@ -69,7 +69,7 @@
  */
 /**
  * @swagger
- *  manager/getVerifyMobileAdmin:
+ *  /manager/getVerifyMobileAdmin:
  *      post:
  *          tags: [Customer-Auth-Admin-Section]
  *          summary: Customer- Auth
@@ -96,7 +96,7 @@
 
 /**
  * @swagger
- *  manager/SendsMobileCodeAdmin:
+ *  /manager/SendsMobileCodeAdmin:
  *      get:
  *          tags: [Manager-Admin-Section]
  *          summary: Manager

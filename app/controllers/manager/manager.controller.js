@@ -4,15 +4,16 @@ const Controller = require('../base.Controller');
 const {StatusCodes: HttpStatus} = require("http-status-codes");
 const createHttpError = require('http-errors');
 const { codeERSali } = require('../../utils/utils');
+const { dockerModel } = require('../../model/doctor.model');
 
 
 class managerControllerClass extends Controller{
 
     async AddDoctor(req,res,next){
         try {
-            const {userFullName,resume,dayOfWeekFree,mobile} =req.body;
+            const {userFullName,resume,mobile} =req.body;
 
-            const query=await dockerModel.create({userFullName:userFullName,resume:resume,dayOfWeekFree:dayOfWeekFree,mobile:mobile} );
+            const query=await dockerModel.create({userFullName:userFullName,resume:resume,mobile:mobile} );
             if(!query) createHttpError.InternalServerError("there was problems for adding Docker ");
             return res.status(HttpStatus.OK).json({
                 StatusCode:HttpStatus.OK,
@@ -98,6 +99,22 @@ class managerControllerClass extends Controller{
             next(error)
         }
     }
+    async manageTimeSet(req,res,next){
+
+       // const {id}=req.user;
+        const { time,id_docker,id }=req.body;
+        const query = await dockerModel.findByIdAndUpdate({id_docker},{
+            '$set':{Time:time}
+        });
+        res.json({
+            query
+        })
+
+    }
+
+
+
+
 
     async getTime(req,res,next){
         const  id=req.customer.id;
