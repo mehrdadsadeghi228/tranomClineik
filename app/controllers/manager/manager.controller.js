@@ -1,5 +1,6 @@
 require('dotenv').config();
 const Controller = require('../base.Controller');
+const multer  = require('multer')
 
 const {StatusCodes: HttpStatus} = require("http-status-codes");
 const createHttpError = require('http-errors');
@@ -11,9 +12,9 @@ class managerControllerClass extends Controller{
 
     async AddDoctor(req,res,next){
         try {
-            const {userFullName,resume,mobile} =req.body;
+            const {userFullName,email,mobile} =req.body;
 
-            const query=await dockerModel.create({userFullName:userFullName,mobile:mobile} );
+            const query=await dockerModel.create({userFullName:userFullName,mobile:mobile,email:email} );
             if(!query) createHttpError.InternalServerError("there was problems for adding Docker ");
             return res.status(HttpStatus.OK).json({
                 StatusCode:HttpStatus.OK,
