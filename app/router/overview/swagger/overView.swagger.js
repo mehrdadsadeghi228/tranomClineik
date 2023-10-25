@@ -30,7 +30,7 @@
  *          tags: [OverView-Admin-Section]
  *          summary: Manager
  *          description: get List Of Doctor
- *           requestBody:
+ *          requestBody:
  *              required: false
  *          responses:
  *              201: 
@@ -41,14 +41,16 @@
  *                  description: Unauthorization
  *              500: 
  *                  description: Internal Server Error 
- *//**
+ */
+
+/**
  * @swagger
  *  /getListOfDoctorWithTime:
  *      get:
  *          tags: [OverView-Admin-Section]
  *          summary: Manager
  *          description: get List Of Doctor With Time
- *           requestBody:
+ *          requestBody:
  *              required: false
  *          responses:
  *              201: 

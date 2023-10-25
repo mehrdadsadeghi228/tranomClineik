@@ -45,7 +45,7 @@ class OverviewControllerClass extends Controller{
                 StatusCode:StatusCodes.OK,
                 message:'Docker And Resume '+query
               
-            })
+            });
         } catch (error) {
             next(error)
         }

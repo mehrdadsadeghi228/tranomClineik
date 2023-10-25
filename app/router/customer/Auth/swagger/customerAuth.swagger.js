@@ -70,7 +70,7 @@
  *          tags:  [Customer-Auth-Admin-Section]
  *          summary: Customer-Auth
  *          description: SendsMobileCodeAdmin
- *           requestBody:
+ *          requestBody:
  *              required: false
  *          responses:
  *              201: 

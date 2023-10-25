@@ -71,19 +71,19 @@
  * @swagger
  *  /manager/getVerifyMobileAdmin:
  *      post:
- *          tags: [Customer-Auth-Admin-Section]
- *          summary: Customer- Auth
- *          description: get Verify Mobile Admin
- *          requestBody:
- *              required: true
- *              content:
+ *         tags: [Manager-Admin-Section]
+ *         summary: Customer Auth
+ *         description: get Verify Mobile Admin
+ *         requestBody:
+ *             required: true
+ *             content:
  *                  application/x-www-form-urlencoded:
  *                      schema:
  *                          $ref: '#/components/ManagerSchemas/getVerifyMobileAdmin'
  *                  application/json:
  *                      schema:
  *                          $ref: '#/components/ManagerSchemas/getVerifyMobileAdmin'
- *          responses:
+ *         responses:
  *              201: 
  *                  description: Success
  *              400: 
