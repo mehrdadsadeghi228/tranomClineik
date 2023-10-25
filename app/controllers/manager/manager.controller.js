@@ -123,8 +123,9 @@ class managerControllerClass extends Controller{
     }
     async manageTimeGet(req,res,next){
     try {
-        const {id_docker}=req.Admin;
-        const query = await dockerModel.findOne({id_docker},{userFullName:1,mobile:1,Time:1})
+      //  const {id_docker}=req.Admin;
+      const {id_docker}=req.body;
+      const query = await dockerModel.findOne({id_docker},{userFullName:1,mobile:1,Time:1})
         if(!query) createHttpError.NotFound(" docker not found or there is time no still set ");
         return res.json({
            message: query
