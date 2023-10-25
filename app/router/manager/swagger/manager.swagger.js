@@ -6,15 +6,15 @@
  *           type: object
  *           required:
  *              -   userFullName
- *              -   resume
+ *              -   email
  *              -   dayOfWeekFree
  *              -   mobile
  *           properties:
  *              userFullName:
  *                 type: string
  *                 description: name Topic 
- *              resume:
- *                 type: file
+ *              email:
+ *                 type: string
  *                 description: name Topic 
  *              dayOfWeekFree:
  *                 type: string
