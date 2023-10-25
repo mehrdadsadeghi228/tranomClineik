@@ -1,0 +1,42 @@
+stages:
+  - test
+  - deploy
+  - push 
+
+
+run_test:
+  stage: test
+
+  before_script:
+    - echo "preparing test data"  
+
+  script:
+    - echo "Running Test"
+
+  after_script:
+    - echo "Cleaning up temporary"
+
+run_on_deploy_test:
+  stage: deploy
+  before_script:
+    - echo "preparing test data"  
+
+  script:
+    - echo "Running Test"
+
+  after_script:
+    - echo "Cleaning up temporary"
+
+
+build_image:
+  stage: deploy
+
+  script:
+    - echo "Running Test"
+
+push_image:
+  stage: push
+
+  script:
+      - echo "Running Test"
+    
