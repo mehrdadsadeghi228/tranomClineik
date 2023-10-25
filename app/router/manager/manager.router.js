@@ -10,6 +10,7 @@ app.post('/SendsMobileCodeAdmin',managerController.SendsMobileCodeAdmin);
 app.get('/getVerifyMobileAdmin',managerController.getVerifyMobileAdmin);
 
 app.put("/manageTimeSet",managerController.manageTimeSet);
+app.get("/manageTimeGet",managerController.manageTimeGet);
 
 module.exports = {
     managerRouter: app

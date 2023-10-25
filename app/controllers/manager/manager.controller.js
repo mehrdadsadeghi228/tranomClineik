@@ -99,17 +99,38 @@ class managerControllerClass extends Controller{
             next(error)
         }
     }
+
     async manageTimeSet(req,res,next){
 
        // const {id}=req.user;
-        const { time,id_docker,id }=req.body;
-        const query = await dockerModel.findByIdAndUpdate({id_docker},{
-            '$set':{Time:time}
-        });
-        res.json({
-            query
-        })
+     try {
+        const { time , id_docker } = req.body;
 
+        const query = await dockerModel.findByIdAndUpdate({id_docker},{
+            '$set':{ Time : time }
+        });
+
+        if(!query) createHttpError.NotImplemented("there was a problems with the value was input ");
+        
+        return res.json({
+            message:query
+        });
+     } catch (error) {
+        next(error)
+         }
+
+    }
+    async manageTimeGet(req,res,next){
+    try {
+        const {id_docker}=req.Admin;
+        const query = await dockerModel.findOne({id_docker},{userFullName:1,mobile:1,Time:1})
+        if(!query) createHttpError.NotFound(" docker not found or there is time no still set ");
+        return res.json({
+           message: query
+        });
+     } catch (error) {
+        next(error)
+     }
     }
 
 
