@@ -113,7 +113,7 @@ class managerControllerClass extends Controller{
 
         if(!query) createHttpError.NotImplemented("there was a problems with the value was input ");
         
-        return res.json({
+        return res.status(HttpStatus.ACCEPTED).json({
             message:query
         });
      } catch (error) {
@@ -127,7 +127,7 @@ class managerControllerClass extends Controller{
       const {id_docker}=req.body;
       const query = await dockerModel.findOne({id_docker},{userFullName:1,mobile:1,Time:1})
         if(!query) createHttpError.NotFound(" docker not found or there is time no still set ");
-        return res.json({
+        return res.status(HttpStatus.ACCEPTED).json({
            message: query
         });
      } catch (error) {
