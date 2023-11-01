@@ -34,10 +34,23 @@
  *           type: object
  *           required:
  *              -  time
+ *              -  id_docker
  *           properties:
+ *              id_docker:
+ *                 type: string
+ *                 description: time Topic
  *              time:
  *                 type: object
  *                 description: time Topic 
+ *        addDays:
+ *           type: object
+ *           required:
+ *              -  days
+ *           properties:
+ *              days:
+ *                 type: object
+ *                 description: time Topic
+ *       
  *      
  */
 
@@ -48,7 +61,32 @@
  *      description : Manager-Admin-Section
  */
 
-
+/**
+ * @swagger
+ *  /manager/addDays:
+ *      post:
+ *          tags: [Manager-Admin-Section]
+ *          summary: Manager
+ *          description: add Days
+ *          requestBody:
+ *              required: true
+ *              content:
+ *                  application/x-www-form-urlencoded:
+ *                      schema:
+ *                          $ref: '#/components/ManagerSchemas/addDays'
+ *                  application/json:
+ *                      schema:
+ *                          $ref: '#/components/ManagerSchemas/addDays'
+ *          responses:
+ *              201: 
+ *                  description: Success
+ *              400: 
+ *                  description: Bad Request
+ *              401: 
+ *                  description: Unauthorization
+ *              500: 
+ *                  description: Internal Server Error 
+ */
 /**
  * @swagger
  *  /manager/AddDoctor:

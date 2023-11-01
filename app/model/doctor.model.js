@@ -1,25 +1,28 @@
 const { default: mongoose } = require("mongoose");
+
 const DaySchema = new mongoose.Schema({
-    nameOfDay:{"time":{
+    "":{"":{
         reserver:{type:Boolean,require:false},
         idCustomer:{type:mongoose.Types.ObjectId,ref:"PatientModel",require:false}
-    }}
+    }
+ }
 });
+
 const TimeSchema=new mongoose.Schema({
     nameOfDay:{type:[DaySchema]}
 
 });
 
 const DockerSchema=new mongoose.Schema({
-    userFullName:{type:String,require:true,unique:true},
+    userFullName:{type:String,require:true, unique:true},
     resume:{type:Object,default:{}},
     Time:{type:[TimeSchema]},
     dayOfWeekReservation:{type:Object},
-    mobile:{type:Number,require:true, unique:true},
-    email:{type:String,require:true,unique:true},
-    password:{type:String ,require:true},
-    isMobile:{type:Boolean,default:false},
-    Active:{type:Boolean,default:true},
+    mobile:{type:Number, require:true, unique:true},
+    email:{type:String, require:true, unique:true},
+    password:{type:String , require:true},
+    isMobile:{type:Boolean, default:false},
+    Active:{type:Boolean, default:true},
     otpMobile:{type:Object ,default:{
         code:11111,
         expireIn:0
@@ -32,5 +35,6 @@ const DockerSchema=new mongoose.Schema({
 
 
 module.exports={
-    dockerModel:mongoose.model("DockerModel",DockerSchema)
+    dockerModel:mongoose.model("dockerModel",DockerSchema),
+    dayModel:mongoose.model("dayModel",DaySchema)
 };

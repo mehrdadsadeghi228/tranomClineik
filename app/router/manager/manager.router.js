@@ -7,6 +7,8 @@ app.post('/AddDoctor',managerController.AddDoctor);
 
 app.post('/SendsMobileCodeAdmin',managerController.SendsMobileCodeAdmin);
 
+app.post('/addDays',managerController.addDays);
+
 app.get('/getVerifyMobileAdmin',managerController.getVerifyMobileAdmin);
 
 app.put("/manageTimeSet",managerController.manageTimeSet);

@@ -1,11 +1,12 @@
 require('dotenv').config();
 const Controller = require('../base.Controller');
 const multer  = require('multer')
+const { default: mongoose } = require("mongoose");
 
 const {StatusCodes: HttpStatus} = require("http-status-codes");
 const createHttpError = require('http-errors');
 const { codeERSali } = require('../../utils/utils');
-const { dockerModel } = require('../../model/doctor.model');
+const { dockerModel, dayModel } = require('../../model/doctor.model');
 
 
 class managerControllerClass extends Controller{
@@ -107,9 +108,10 @@ class managerControllerClass extends Controller{
      try {
         const { time , id_docker } = req.body;
 
-        const query = await dockerModel.findByIdAndUpdate({id_docker},{
+        const query = await dockerModel.findByIdAndUpdate({_id:id_docker},{
             '$set':{ Time : time }
         });
+
 
         if(!query) createHttpError.NotImplemented("there was a problems with the value was input ");
         
@@ -122,6 +124,26 @@ class managerControllerClass extends Controller{
          }
 
     }
+    async addDays(req,res,next){
+        try {
+            var {days}=req.body;
+            console.warn(days);
+            console.warn(typeof days );
+        
+
+            const result= dayModel.create({"":days});
+          
+        if(!result) createHttpError.NotImplemented("there was a problems with the value was input ");
+        
+        return res.status(HttpStatus.ACCEPTED).json({
+            StatusCode:HttpStatus.OK,
+            message:result
+        });  
+
+        } catch (error) {
+            next(error);
+        }
+    }
     async manageTimeGet(req,res,next){
     try {
       //  const {id_docker}=req.Admin;
@@ -130,14 +152,34 @@ class managerControllerClass extends Controller{
         if(!query) createHttpError.NotFound(" docker not found or there is time no still set ");
         return res.status(HttpStatus.ACCEPTED).json({
             StatusCode:HttpStatus.OK,
-           message: query
+            message: query
         });
      } catch (error) {
         next(error)
      }
     }
 
+    async checkAndAddTime(req,res,next){
+        try {
+            const {id_docker,id_user,user_time}=req.body;
+            const query = await dockerModel.findOne({id_docker},{userFullName:1,mobile:1,Time:1});
+            for(time.day in query.Time.TimeSchema){
 
+                console.log(time.day);
+                console.log(query.Time.TimeSchema);
+
+
+            }
+            if(!query) createHttpError.NotFound(" docker not found or there is time no still set ");
+            return res.status(HttpStatus.ACCEPTED).json({
+                  StatusCode:HttpStatus.OK,
+                  message: query
+              }); 
+
+        } catch (error) {
+            next(error);
+        }
+    }
 
 
 
