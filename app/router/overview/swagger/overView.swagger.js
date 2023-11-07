@@ -25,7 +25,7 @@
 
 /**
  * @swagger
- *  /getListOfDoctor:
+ *  /ListOfDoctor:
  *      get:
  *          tags: [OverView-Admin-Section]
  *          summary: Manager
@@ -45,7 +45,7 @@
 
 /**
  * @swagger
- *  /getListOfDoctorWithTime:
+ *  /ListOfDoctorWithTime:
  *      get:
  *          tags: [OverView-Admin-Section]
  *          summary: Manager
@@ -65,7 +65,7 @@
 
  /**
  * @swagger
- *  /getResumeDoctor:
+ *  /ResumeDoctor:
  *      post:
  *          tags: [OverView-Admin-Section]
  *          summary: find Product By Id
@@ -75,10 +75,10 @@
  *              content:
  *                  application/x-www-form-urlencoded:
  *                      schema:
- *                          $ref: '#/OverViewSchemas/TopicSchemas/getResumeDoctor'
+ *                          $ref: '#/components/OverViewSchemas/getResumeDoctor'
  *                  application/json:
  *                      schema:
- *                          $ref: '#/OverViewSchemas/TopicSchemas/getResumeDoctor'
+ *                          $ref: '#/components/OverViewSchemas/getResumeDoctor'
  *          responses:
  *              201: 
  *                  description: Success

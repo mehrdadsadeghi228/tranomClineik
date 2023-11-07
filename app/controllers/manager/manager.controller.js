@@ -18,7 +18,7 @@ class managerControllerClass extends Controller{
             const query=await dockerModel.create({userFullName:userFullName,mobile:mobile,email:email} );
             if(!query) createHttpError.InternalServerError("there was problems for adding Docker ");
             return res.status(HttpStatus.OK).json({
-                StatusCode:HttpStatus.OK,
+                StatusCode : HttpStatus.OK,
                 message:'Adding it was success the id  '+query._id
             });
         } catch (error) {

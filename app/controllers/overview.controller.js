@@ -14,7 +14,7 @@ class OverviewControllerClass extends Controller{
             return res.status(StatusCodes.OK).json({
                 StatusCode:StatusCodes.OK,
                 message:'List Of Docker '+query
-            })
+            });
         } catch (error) {
             next(error)
         }
@@ -24,11 +24,12 @@ class OverviewControllerClass extends Controller{
         try {
             const query=await dockerModel.find({},{userFullName:1,dayOfWeekFree:1,resume:1});
             if(!query) createHttpError.NotFound("there is any list of dockers ");
+
             return res.status(StatusCodes.OK).json({
                 StatusCode:StatusCodes.OK,
-                message:'List Of Docker and Free time And Resume '+query
+                message:'List Of Docker and Free time And Resume : '+query
               
-            })
+            });
         } catch (error) {
             next(error)
         }
@@ -40,7 +41,7 @@ class OverviewControllerClass extends Controller{
             const {username}=req.body;
 
             const query=await dockerModel.find({userFullName:username},{userFullName:1,resume:1});
-            if(!query) createHttpError.NotFound("there is any list of dockers ");
+            if(!query) createHttpError.NotFound("there is not any Resume for this  dockers ");
             return res.status(StatusCodes.OK).json({
                 StatusCode:StatusCodes.OK,
                 message:'Docker And Resume '+query
