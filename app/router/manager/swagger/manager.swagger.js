@@ -61,6 +61,7 @@
  *      description : Manager-Admin-Section
  */
 
+
 /**
  * @swagger
  *  /manager/addDays:
@@ -87,6 +88,8 @@
  *              500: 
  *                  description: Internal Server Error 
  */
+
+
 /**
  * @swagger
  *  /manager/AddDoctor:
@@ -113,6 +116,7 @@
  *              500: 
  *                  description: Internal Server Error 
  */
+
 /**
  * @swagger
  *  /manager/getVerifyMobileAdmin:

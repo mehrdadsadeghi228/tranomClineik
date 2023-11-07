@@ -39,7 +39,6 @@ class OverviewControllerClass extends Controller{
     async getResumeDoctor(req,res,next){
         try {
             const {username}=req.body;
-
             const query=await dockerModel.find({userFullName:username},{userFullName:1,resume:1});
             if(!query) createHttpError.NotFound("there is not any Resume for this  dockers ");
             return res.status(StatusCodes.OK).json({

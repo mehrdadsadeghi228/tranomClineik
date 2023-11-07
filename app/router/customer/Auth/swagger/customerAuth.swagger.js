@@ -5,9 +5,9 @@
  *        Signing:
  *           type: object
  *           required:
- *              -   userFullName
- *              -   email
- *              -   mobile
+ *              -  userFullName
+ *              -  email
+ *              -  mobile
  *           properties:
  *              userFullName:
  *                 type: string
@@ -21,7 +21,7 @@
  *        getVerifyMobileAdmin:
  *           type: object
  *           required:
- *              -   code
+ *              -  code
  *           properties:
  *              code:
  *                 type: string
@@ -39,7 +39,7 @@
 
 /**
  * @swagger
- *  customer/Signing:
+ *  /customer/Signing:
  *      post:
  *          tags:  [Customer-Auth-Admin-Section]
  *          summary: Customer-Auth
@@ -65,7 +65,7 @@
  */
 /**
  * @swagger
- *  customer/SendsMobileCodeAdmin:
+ *  /customer/SendsMobileCodeAdmin:
  *      get:
  *          tags:  [Customer-Auth-Admin-Section]
  *          summary: Customer-Auth
@@ -84,8 +84,8 @@
  */
 /**
  * @swagger
- *  customer/getVerifyMobileAdmin:
- *      post:
+ *  /customer/getVerifyMobileAdmin:
+ *      put:
  *          tags:  [Customer-Auth-Admin-Section]
  *          summary: Customer-Auth
  *          description: getVerifyMobileAdmin
